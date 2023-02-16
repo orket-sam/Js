@@ -1,5 +1,2 @@
-const sayHi=require('./utils')
-const user=require('./names')
-require('./mind_grenade')
-
-sayHi(user.name);
+const host=require('./os_module')
+console.log(`The owner is ${host.hostName}`)

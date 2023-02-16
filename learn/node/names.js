@@ -4,4 +4,4 @@ age:'21'
 }
 
 
-module.exports=user;
+module.exports.user=user;
