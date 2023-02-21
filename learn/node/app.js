@@ -1,2 +1,3 @@
-const host=require('./os_module')
-console.log(`The owner is ${host.hostName}`)
+setInterval(()=>console.log('Wait for me',),3000)
+
+console.log('Hey am here')

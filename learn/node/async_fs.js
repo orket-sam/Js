@@ -1,17 +1,43 @@
 const {readFile,writeFile}=require('fs')
 
-readFile('./contents/subfolder/text.txt','utf-8',(err,data)=>{
-    if(err){
-        console.log('Read operation failed')
+
+
+var first;
+var second;
+readFile('./contents/subfolder/first.txt','utf8',(error,result)=>{
+    if(error){
+        console.log('unable to read file 1');
     }else{
-        console.log(`Text: ${data}`)
+
+        first=result;
+        readFile('./contents/subfolder/second.txt','utf8',(error,result)=>{
+            if(error){
+                console.log('unable to read file 2');
+            }else{
+                second=result;
+                writeFile('./contents/subfolder/third.txt',`${first} \n ${second}`,(error,res)=>{
+                    if(error){
+                        console.log('oops');
+                    }else{
+                        readFile('./contents/subfolder/third.txt','utf8',(error,result)=>{
+                            if(error){
+                                console.log('unable to read file 3');
+                            }else{
+                                console.log('done');
+                            }
+                        })
+                    }
+                })
+            }
+        })
+        
+
+        
     }
 })
 
-writeFile('./contents/subfolder/text.txt','Orket is awesomme',(err,data)=>{
-    if(err){
-        console.log('Write operation failed')
-    }else{
-        console.log('Writing done')
-    }
-})
+
+
+
+
+
