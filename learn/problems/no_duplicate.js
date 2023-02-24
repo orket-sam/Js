@@ -14,4 +14,4 @@ function noDuplicte(nums){
 }
 
 
-noDuplicte([1,2,10,1])
+noDuplicte([1,1,2])

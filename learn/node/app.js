@@ -1,25 +1,21 @@
 const http=require('http')
 
-const port=3000
-const hostName='127.0.0.1'
-
-
-const server=http.createServer(
-    (req,res)=>{
-
-console.log(req.url);
-        if(req.url=='/'){
-            res.write('Welcome home ')
-        }else{
-            res.write(  `
-            <h1>Page doesn't exist</h1>
-            <a href="/">Go Back Home</a>
-            `)
-        }
-        res.end()
+const server=http.createServer((req,res)=>{
+    if(req.url=='/'){
+        res.write('Welcome home Orket')
+    }else{
+        res.write(`
+        
+      <h1>Invalid address</h1>
+      <a href="/">Go Home</a>
+        `)
     }
-)
+    res.end()
+})
+
+
+const hostName='127.0.0.1'
+const port=3000
 
 server.listen(port,hostName)
-
-console.log(`server is running on : http://${hostName}:${port}`);
+console.log(`server running: http://${hostName}:${port}`);

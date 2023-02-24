@@ -1,0 +1,5 @@
+
+
+To initialize package.json file use npm init or npm init -y for defaults
+npm install <package name> or npm i <package name> // For dev dependencies -D flag is required
+
