@@ -1,8 +1,13 @@
-const {EventEmitter}=require('events')
+const {readFile}=require('fs').promises
 
-const eventEmitter=new EventEmitter();
+async function getText(){
 
-eventEmitter.on('orket',()=>console.log('Very nice guy'))
+    const text=await readFile('./hello.txt','utf-8')
+    try {
+        console.log(text)
+    } catch (error) {
+        console.log('oopss');
+    }
+}
 
-
-eventEmitter.emit('orket')
+getText()
